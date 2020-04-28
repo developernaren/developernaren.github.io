@@ -1,0 +1,22 @@
+name: Eleventy Build
+
+on:
+  push:
+    branches:
+      - source
+
+jobs:
+  deploy:
+    runs-on: driftphp/base
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Build
+        uses: actions/setup-node@v1
+      - run: RUN composer global require hirak/prestissimo && cd /var/www && composer install -n --prefer-dist --no-dev --no-suggest && composer dump-autoload -n --no-dev --optimize
+      - run: php /bin/console build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v1.1.0
+        env:
+          PUBLISH_DIR: build
+          PUBLISH_BRANCH: master
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
