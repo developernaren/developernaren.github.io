@@ -12,8 +12,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run Build
         uses: actions/setup-node@v1
-      - run: composer global require hirak/prestissimo && cd /var/www && composer install -n --prefer-dist --no-dev --no-suggest && composer dump-autoload -n --no-dev --optimize
-      - run: php /bin/console build
+      - run: composer install -n --prefer-dist --no-dev --no-suggest && composer dump-autoload -n --no-dev --optimize
+      - run: php bin/console build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v1.1.0
         env:
