@@ -1,0 +1,8 @@
+# Routes
+default:
+  path: /{page?}
+  controller: App\Controller\DefaultController
+  requirements:
+    page: ".+"
+  defaults:
+    page: index

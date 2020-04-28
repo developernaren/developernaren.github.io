@@ -1,0 +1,32 @@
+<!--
+File copied from here
+https://www.tailwindtoolbox.com/templates/profile-card
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="/public/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{title}</title>
+    <meta name="description"
+          content="{description}">
+    <meta name="author" content="{title}">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
+    <!--Replace with your tailwind.css once created-->
+</head>
+<body class="font-sans antialiased text-gray-100 leading-normal tracking-wider bg-cover h-auto"
+      style="background-image:url('/public/bg.jpg');">
+
+<div class="absolute top-0 left-10 h-10 p-2 bg-gray-600 flex-wrap rounded justify-around m-4">
+    <ul class="flex">
+        <li>
+            <a href="/blog">Posts</a>
+        </li>
+    </ul>
+</div>
+{content}
+</body>
+</html>
