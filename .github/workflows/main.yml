@@ -14,6 +14,7 @@ jobs:
         uses: actions/setup-node@v1
       - run: composer install -n --prefer-dist --no-dev --no-suggest && composer dump-autoload -n --no-dev --optimize
       - run: php bin/console build
+      - run: php bin/console image
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v1.1.0
         env:
